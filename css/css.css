@@ -1,0 +1,255 @@
+.logo a{
+    color: white;
+    font-size: 30px;
+    margin-top: -10px;
+}
+.allLi{
+    align-content: center;
+    background-color: rgb(48, 47, 47);
+    text-align: center;
+    padding: 15px;
+    border: solid rgb(208, 104, 0) 2px;
+    border-radius: 5px;
+    height: 60px
+    
+}
+.allLi li :hover{
+    background-color: rgb(122, 117, 117);
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* change 0.55 for more or less darkness */
+  z-index: 1;
+}
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  z-index: 2;
+  font-size: 20px;
+}
+.overlay-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+/* h1 after header */
+.content{
+    font-size: 6.6rem;
+}
+.btn-orange{
+    background-color: rgb(209, 87, 0);
+}
+.left-postition{
+    margin-left: 190px;
+}
+.makeleft{
+  margin-left: -60px;
+}
+
+.image-container {
+  position: relative;
+  height: 100vh;
+  background-color: rgba(67, 66, 66, 0.055);
+  overflow: hidden; /* مهم: يمنع الصورة من الخروج خارج الإطار */
+  /* background-image: url(images/const2.jpg); */
+}
+
+.scroll-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  transition: transform 0.1s ease-out;
+  height: 180%;
+}
+.makeright{
+  padding-left: 130px;
+  box-sizing: border-box;
+}
+
+.eng-container {
+  background-color: gray;
+  overflow: hidden;
+  height:100%;
+}
+
+.eng-img {
+  width: 200%;
+   height: 120%; 
+  object-fit: cover;       /* makes it fill nicely */
+  display: block;
+  transition: transform 0.1s ease-out;
+
+}
+
+.overlay-eng {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* dark transparent layer */
+  z-index: 1;
+}
+
+.content-eng {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -110%);
+  z-index: 2;
+}
+.border-feature{
+  margin-top: 3px;
+  border-top: solid rgba(110, 110, 110, 0.564) 2px;
+}
+
+.c-Truck{
+      animation: truck 18s ease-in infinite alternate;
+          position: relative;
+
+
+}
+@keyframes truck {
+   from {
+      left: 0;
+    }
+    to {
+      left: 1200px;
+    }
+  
+}
+/* ===== RESPONSIVE FIXES FOR SMALL SCREENS ===== */
+@media (max-width: 576px) {
+
+  /* General layout adjustments */
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  h1{
+    font-size: 1rem;
+  }
+  image{
+    width: 200px;
+    height: 200px;
+  }
+  .video-container {
+    height: 90vh;
+  }
+
+  .overlay-content {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .content {
+    font-size: 2.5rem; /* smaller main heading */
+  }
+
+  .overlay-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .left-postition {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Navbar adjustments */
+  header {
+    flex-direction: column;
+    align-items: center !important;
+  }
+
+  header .col-lg-6 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .allLi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px;
+    height: auto;
+    background-color: rgba(48, 47, 47, 0.9);
+  }
+
+  .allLi li {
+    flex: 1 1 45%;
+    margin: 2px;
+  }
+
+  /* Images */
+  .image-container, 
+  .eng-container {
+    height: auto !important;
+  }
+
+ .scroll-image,
+.eng-img {
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  transform: none !important;
+  object-fit: cover !important;
+  transition: none !important;
+}
+  /* Text sections */
+  .makeright {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .content-eng {
+    position: static;
+    transform: none;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .content-eng h1 {
+    font-size: 2rem !important;
+  }
+
+  .content-eng p {
+    font-size: 1rem !important;
+  }
+
+  /* Reduce whitespace */
+  .container, .row {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .overlay-eng{
+    height: 0;
+    width: 0;
+  }
+}
