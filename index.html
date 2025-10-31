@@ -1,5 +1,116 @@
-<html>
-    <body>
-        <a href="website1.html">website1</a>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Project</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top left, #1a2a6c, #b21f1f, #fdbb2d);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 50px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 81, 47, 0.5);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 81, 47, 0.8);
+      background: linear-gradient(45deg, #dd2476, #ff512f);
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: move 8s infinite alternate ease-in-out;
+    }
+
+    .circle:nth-child(1) {
+      width: 200px; height: 200px;
+      background: #ff512f;
+      top: 10%; left: 15%;
+      animation-delay: 0s;
+    }
+    .circle:nth-child(2) {
+      width: 300px; height: 300px;
+      background: #dd2476;
+      bottom: 10%; right: 10%;
+      animation-delay: 1s;
+    }
+    .circle:nth-child(3) {
+      width: 150px; height: 150px;
+      background: #fdbb2d;
+      bottom: 30%; left: 30%;
+      animation-delay: 2s;
+    }
+
+    @keyframes move {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-30px) scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <div class="container">
+    <h1> website 1 </h1>
+    <p>This website serves as an instructional and informational platform for a construction company.</p>
+    <button onclick="window.location.href='website1.html'">Open Project</button>
+  </div>
+</body>
+</html>
